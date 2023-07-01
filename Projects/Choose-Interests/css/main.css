@@ -1,0 +1,106 @@
+:root {
+    --main-purple-color: #5c48f1;
+    --parent-background-color: #fafafa;
+    --elements-background-color: #eeecfd;
+    --element-border-color: #e0e0e1;
+
+}
+*{
+    text-transform:capitalize;
+
+    font-family: system-ui, sans-serif;
+    box-sizing: border-box;
+}
+body + div{
+    background-color: var(--parent-background-color);
+}
+
+
+
+.interest-header{
+    background-color: var(--elements-background-color);
+    color: var(--main-purple-color);
+
+    height: 100px;
+    width: 98%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    font-size: xx-large;
+
+    border-radius: 10px;
+}
+
+
+
+.interest-flex-parent{
+    background-color: var(--elements-background-color);
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    border-radius: 10px;
+    width: 98%;
+    margin: auto;
+}
+.interest-flex-child{
+    width: 24.5%;
+    height: 250px;
+    margin-bottom: 20px;
+
+    border: 5px solid var(--element-border-color);
+    border-radius: 15px;
+    position: relative;
+    
+    transition-duration: 0.2s;
+}
+.interest-flex-child:hover img:first-child{
+    transform: scale(1.11);
+}
+input[type=checkbox]:checked + .interest-flex-child{
+    border-color: var(--main-purple-color);
+}
+
+
+
+input + label > img:first-child {
+    width: 200px;
+    height: 200px;
+    margin-left: calc((100% - 200px) / 2);
+
+    transition: 0.5s 0.1s ease-out;
+}
+input + label > p:last-child {
+    color: var(--main-purple-color);
+    
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+
+    margin: 0;
+}
+
+.interest-container input[type=submit]{
+    background-color: var(--elements-background-color);
+    color: var(--main-purple-color);
+
+    border: solid var(--element-border-color) 3px;
+    border-radius: 15px;
+
+    font-size: large;
+    font-weight: bold;
+
+    transition: 0.5s 0.1s ease-out;
+
+    margin-bottom: 10px;
+}
+.interest-container input[type=submit]:hover{
+    transform: scale(1.2);
+    border-color: var(--main-purple-color);
+}
