@@ -225,12 +225,11 @@ projectSegment.addEventListener('touchmove', function(event){
             }
         )
         // ------------------------------------
-        // now for the Y scroll
+        // now for the Y touch scroll
 
     let moveDeltaY = parseFloat(slider.dataset.mouseDownAtY) - mouseY
     if(moveDeltaY < 100 && moveDeltaY > -100){return}
     else{
-    console.log(moveDeltaY)
     window.scrollBy({
         left: 0,
         top: moveDeltaY,
@@ -264,7 +263,6 @@ projectSegment.onmousemove = e =>{
             }
         )
     }
-        // el.style.objectPosition = `${lastDeltaPercentage * -10 - 100}% 0%`
     
 projectSegment.addEventListener('touchend', function(event){
     slider.dataset.mouseDownAt = '0'
@@ -299,7 +297,6 @@ imageCanvas.forEach((ele, i) =>{
 
         }
         else if(ele.dataset.touched == '1'){
-            console.log('out')
             ele.dataset.touched = '0'
             imageHover[i].style.transform = `translateY(100%)`
             sliderImages[i].style.filter = 'blur(0px)'
@@ -315,7 +312,6 @@ imageCanvas.forEach((ele, i) =>{
 
 imageCanvas.forEach((ele, i) =>{
     ele.onmouseleave = function(){
-        console.log('out')
         imageHover[i].style.transform = `translateY(100%)`
         sliderImages[i].style.filter = 'blur(0px)'
     }
@@ -329,6 +325,7 @@ visitProjectButton.forEach(function(ele, i){
     ele.onclick = () =>{goToProject(projectsURL[i])}
     ele.addEventListener('touchstart', () =>{goToProject(projectsURL[i])})
 })
+
 
 //make sure that the slider doesn't create a scrollbar + not shifting the viewport to the right neglecting the main content
 window.onload= function(){
