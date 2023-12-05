@@ -4,28 +4,15 @@ function getRndInteger(min, max) {
   }
 
 
-
-let homeTabs = Array.from(document.getElementsByClassName('home-tab'))
-let segments = ['#about-me', '#skills', '#projects', '#contact-me']
-homeTabs.forEach((ele, i)=>{
-    ele.onmousedown = function(){
-    }
-
-    ele.addEventListener('touchstart', function(){
-        if(ele.dataset.touchCounter == '0'){
-            ele.dataset.touchCounter = '1'
-            ele.hover()
-        }
-        else if (ele.dataset.touchCounter == '1'){
-            ele.dataset.touchCounter = '0'
-            location = segments[i]
-        }
-        else{
-            location = segments[i]
-
-        }
-    })
+let homeNav = document.querySelector(".home-nav ul");
+let homeNavLi = document.querySelectorAll(".home-nav ul li");
+Array.from(homeNavLi).forEach((ele, i)=>{
+    ele.onmouseover = ()=>{
+        homeNav.dataset.active = i;
+    };
 })
+
+
 
 
 let rightButtonFlip = document.querySelector('.right.flip-button');
@@ -84,20 +71,6 @@ leftButtonFlip.onclick = function(){
     }
 }
 
-
-let nav = document.querySelector('nav');
-document.body.onscroll = function(){
-    document.body.scrollX = 0
-
-    if(innerHeight - 50 <= scrollY){
-        nav.style.transform = 'translateX(0px)'
-
-    }
-    if(innerHeight - 50 > scrollY){
-        nav.style.transform = 'translateX(-3000px)'
-
-    }
-}
 
 let seeMoreButton = document.getElementsByClassName("more-skills")[0]
 let skillUniverseXtra = document.querySelector(".skills-universe.xtra")
@@ -280,13 +253,13 @@ projectSegment.onmouseup = e =>{
 let imageCanvas = document.querySelectorAll('.image-canvas')
 let imageHover = document.querySelectorAll('.slider .image-hover')
 let visitProjectButton = document.querySelectorAll('.slider .visit-project');
-let projectsURL = ['/Projects/full-digital-agency-intro/digital-agency-website.html',
-    '/Projects/Kasper-agency/Kasper.html',
-    '/Projects/testimonials-grid-section/testimonial-review.html',
-    '/Projects/pricing-table/pricing-table.html',
-    '/Projects/Choose-Interests/choose-interests.html',
-    '/Projects/login-form/login-form.html',
-    '/Projects/Gym-Intro/gym-intro.html']
+let projectsURL = ['Projects/full-digital-agency-intro/digital-agency-website.html',
+    'Projects/Kasper-agency/Kasper.html',
+    'Projects/testimonials-grid-section/testimonial-review.html',
+    'Projects/pricing-table/pricing-table.html',
+    'Projects/Choose-Interests/choose-interests.html',
+    'Projects/login-form/login-form.html',
+    'Projects/Gym-Intro/gym-intro.html']
 
 imageCanvas.forEach((ele, i) =>{
     ele.addEventListener('touchstart', function(){
